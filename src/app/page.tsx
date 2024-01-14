@@ -1,21 +1,23 @@
 
 import NewsCard from "./components/NewsCard";
-import getNews from "./lib/getNews";
 
+const API_URL = process.env.NEXT_PUBLIC_LOCAL_NEWS_API_URL;
 
 export default async function Home() {
 
-  const datanews = await getNews();
-  const posts = datanews.data
+  const res = await fetch(`${API_URL}/news`)
+  console.log("asssa:",res)
+  const news = await res.json();
+  const newsData = news.data
+
   return (
     <>
 
       <div className="p-3 mx-4">
         <NewsCard
-          promise={posts}
+          promise={newsData}
         />
       </div>
     </>
   )
 }
-
