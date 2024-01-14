@@ -4,8 +4,8 @@ const getNews = async () => {
     const options = {
           Cache: "no-store",
           headers: {
-              'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
-              'X-RapidAPI-Host': process.env.REACT_APP_NEWS_RAPIDAPI_HOST
+              'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
+              'X-RapidAPI-Host': process.env.NEXT_PUBLIC_NEWS_RAPIDAPI_HOST
           }
       };
       const res = await fetch(DATA_SOURCE_URL, options)
